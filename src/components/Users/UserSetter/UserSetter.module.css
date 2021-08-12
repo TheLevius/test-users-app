@@ -4,5 +4,12 @@
 .userSetForm > label {
     width: 100%;
     display: block;
+}
+.userInput {
     padding: 1rem;
+    margin: 1rem;
+}
+.userSetToggleHolder {
+    margin: 1rem;
+    padding: 0.5rem 0;
 }

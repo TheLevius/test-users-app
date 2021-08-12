@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import styles from '../../App.module.css';
+import styles from './Users.module.css';
 import {AppStateType} from '../../redux/store';
 import {UserType} from '../../api/users-api';
 import {User} from './User/User';
@@ -12,9 +12,11 @@ export const Users = () => {
     const users = useSelector<AppStateType, UserType[]>(state => state.app.users);
 
     const getUsersClickHandle = () => {
-
         dispatch(getUsersTC())
     }
+    useEffect(()=>{
+        dispatch(getUsersTC())
+    }, [dispatch])
     return (
         <div className={styles.usersContainer}>
             <div className={styles.usersPanel}>

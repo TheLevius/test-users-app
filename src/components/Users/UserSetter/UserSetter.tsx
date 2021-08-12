@@ -8,18 +8,16 @@ export const UserSetter: FC<{}> = ({...props}) => {
     const [editMode, setEditMode] = useState<boolean>(false);
     const [firstName, setFirstName] = useState<string>('');
     const [lastName, setLastName] = useState<string>('');
-    const [email, setEmail] = useState<string>('');
 
     const setEditModeToggle = () => {
         setEditMode(prev => !prev);
     }
 
     const addUserClickHandle = () => {
-        if(!!firstName && !!lastName && !!email) {
-            dispatch(appActions.userAddedAC(firstName, lastName, email));
+        if(!!firstName && !!lastName) {
+            dispatch(appActions.userAddedAC(firstName, lastName));
             setFirstName('')
             setLastName('')
-            setEmail('')
             setEditModeToggle();
         }
         return;
@@ -31,9 +29,6 @@ export const UserSetter: FC<{}> = ({...props}) => {
     const onLastNameChangeHandle = (e: ChangeEvent<HTMLInputElement>) => {
         setLastName(e.target.value);
     }
-    const onEmailChangeHandle = (e: ChangeEvent<HTMLInputElement>) => {
-        setEmail(e.target.value);
-    }
 
     if (editMode) {
         return (
@@ -41,15 +36,21 @@ export const UserSetter: FC<{}> = ({...props}) => {
                 <div className={styles.userSetForm}>
                     <label htmlFor='first-name'>
                         first name:
-                        <input type={'text'} value={firstName} id={'first-name'} onChange={onFirstNameChangeHandle} />
+                        <input type={'text'}
+                               value={firstName}
+                               id={'first-name'}
+                               className={styles.userInput}
+                               onChange={onFirstNameChangeHandle}
+                        />
                     </label>
                     <label htmlFor='last-name'>
                         last name:
-                        <input type={'text'} value={lastName} id={'last-name'} onChange={onLastNameChangeHandle} />
-                    </label>
-                    <label htmlFor='email'>
-                        email:
-                        <input type={'text'} value={email} id={'email'} onChange={onEmailChangeHandle}/>
+                        <input type={'text'}
+                               value={lastName}
+                               id={'last-name'}
+                               className={styles.userInput}
+                               onChange={onLastNameChangeHandle}
+                        />
                     </label>
                 </div>
                 <div className={styles.userSetToggleHolder}>

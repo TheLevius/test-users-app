@@ -1,0 +1,17 @@
+.wrapper {
+    padding: 1rem 0;
+    background-color: rgb(101 119 144);
+}
+.navBox {
+    padding: 1rem 0;
+    overflow: hidden;
+    text-align: center;
+}
+.navLink {
+    padding: 1rem;
+    color: rgb(255, 255, 255);
+
+}
+.activeNavLink {
+    font-weight: 600;
+}

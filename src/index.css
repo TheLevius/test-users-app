@@ -1,6 +1,7 @@
 html {
   font-size: 8px;
   line-height: 1;
+  box-sizing: border-box;
 }
 body {
   font-size: 2rem;
@@ -12,4 +13,10 @@ body {
 
 code {
   font-family: monospace;
+}
+.main-wrapper {
+  text-align: center;
+}
+.main-wrapper > h2 {
+  color: rgb(101 119 144);
 }

@@ -1,14 +1,16 @@
-.userRow {
-    margin: 2rem 0 0;
-    vertical-align: middle;
+.userCell {
+    min-width: 20rem;
+    max-width: 60rem;
+    margin: 1rem;
+    text-align: center;
 }
-.userRow > div {
-    display: inline;
+.userCell > div {
+    display: block;
     padding: 1rem;
-    vertical-align: middle;
 }
+
 .userPic {
-    max-width: 6rem;
+    max-width: 100%;
     height: auto;
     border-radius: 50%;
 }
