@@ -1,0 +1,8 @@
+.userSetContainer {
+
+}
+.userSetForm > label {
+    width: 100%;
+    display: block;
+    padding: 1rem;
+}

@@ -1,12 +1,12 @@
 import React from 'react';
-import './App.css';
+import {Users} from './components/Users/Users';
 
-function App() {
-  return (
-    <div className="App">
-      <span>test</span>
-    </div>
-  );
+export const App = ({...props}) => {
+
+    console.log('app render');
+    return (
+        <div className={'app'}>
+                <Users />
+        </div>
+    );
 }
-
-export default App;

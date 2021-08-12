@@ -1,19 +1,20 @@
 import axios from 'axios';
 
 const reqres = axios.create({
-    baseURL: 'https://reqres.in/api',
-    withCredentials: true
+    baseURL: 'https://reqres.in/api'
 });
 
 export const usersAPI = {
-    getUsers(per_page: number = 12) {
+    getUsers(per_page: number = 12, total: number = 12) {
         return reqres.get<UsersResponseType>('/users', {params: {
-                per_page
+                per_page,
+                total,
+                'b&a': 'b&a'
             }})
     }
 }
 
-type UserType = {
+export type UserType = {
     id: number;
     email: string;
     first_name: string;
@@ -21,7 +22,7 @@ type UserType = {
     avatar: string;
 }
 
-type UsersResponseType = {
+export type UsersResponseType = {
     data: UserType[]
     page: number;
     per_page: number;
